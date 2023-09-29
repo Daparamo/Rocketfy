@@ -18,7 +18,7 @@ describe('HomePage', () => {
   
   it('should return an empty user object if local storage is empty', () => {
     // Mock the getElementFromLocalStorage method
-    spyOn(UtilsService, 'getElementFromLocalStorage').and.returnValue({});
+    //spyOn(UtilsService, 'getElementFromLocalStorage').and.returnValue({});
 
     // Call the getUser method
     const result = component.getUser();

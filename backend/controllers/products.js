@@ -17,7 +17,7 @@ module.exports = {
     try {
       console.log("Create Product");
       let newProduct = new Product(req.body);
-      console.log(newProduct)
+      
       let product = await newProduct.save();
       _id = product._id.toString();
       res.status(200).json(product);
@@ -31,7 +31,6 @@ module.exports = {
       let updateProduct = new Product(req.body);
       let { id } = req.params;
       let filter = { _id: id };
-      console.log(id,updateProduct)
       let response = await Product.findOneAndUpdate(filter, updateProduct);
       res.status(200).json(response);
     } catch (e) {
@@ -41,7 +40,6 @@ module.exports = {
   deleteProduct: async (req, res, next) => {
     try {
       let { id } = req.params;
-      console.log(id)
       let filter = { _id: id };
       let response = await Product.deleteOne(filter);      
       res.status(200).json(response);

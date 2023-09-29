@@ -18,6 +18,7 @@
         "http": "^0.0.1-security",
         "mongodb": "^4.11.0",
         "mongoose": "^6.7.0",
+        "mongoose-history": "^0.8.0",
         "mongoose-paginate-v2": "^1.7.4",
         "morgan": "^1.10.0",
         "nodemon": "^2.0.20",
