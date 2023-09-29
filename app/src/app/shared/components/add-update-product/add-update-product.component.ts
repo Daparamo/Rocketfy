@@ -41,7 +41,7 @@ export class AddUpdateProductComponent implements OnInit {
     this.user = this.utilsSvc.getElementFromLocalStorage("user");
 
     if (this.product) {
-      console.log(this.product)
+      
       this.form.setValue(this.product);
       this.form.updateValueAndValidity();
     }
@@ -62,10 +62,10 @@ export class AddUpdateProductComponent implements OnInit {
   //========= Crear Producto ==========
   createProduct() {
     this.utilsSvc.presentLoading();
-    console.log(this.form.value)
+    
     
     delete this.form.value["_id"];
-    console.log(this.form.value)
+    
 
     this.apiSvc.addProduct(this.form.value).then(res=> {
       this.utilsSvc.dismissModal({ success: true });
@@ -93,7 +93,7 @@ export class AddUpdateProductComponent implements OnInit {
   UpdateProduct() {
     this.utilsSvc.presentLoading();
     let id = this.form.value._id;
-    console.log(id,this.form.value)
+    
     this.apiSvc.updateProduct(id, this.form.value).then(res => {
         this.utilsSvc.dismissModal({ success: true });
         this.utilsSvc.presentToast(
@@ -118,7 +118,7 @@ export class AddUpdateProductComponent implements OnInit {
 
 
   handleReorderImages(ev: CustomEvent<ItemReorderEventDetail>) {
-    console.log(ev)
+    
     this.form.value.image = ev.detail.complete(this.form.value.image);
     this.form.updateValueAndValidity();
   }
