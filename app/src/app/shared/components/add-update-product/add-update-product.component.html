@@ -1,0 +1,100 @@
+<ion-content color="light" class="ion-padding">
+  <app-header color="light" [centerTitle]=true [isModal]=true [title]="product ? 'Producto' : 'Nuevo Producto'"></app-header>
+
+  <app-custom-input [control]="form.controls.name" type="text" label="Nombre"></app-custom-input>
+  <div class="validators" *ngIf="form.controls.name.errors && form.controls.name.dirty">
+    <div *ngIf="form.controls.name.errors?.['required']">Este campo es requerido</div>
+    <div *ngIf="form.controls.name.errors?.['minlength']">Este campo requiere al menos 4 caracteres</div>
+  </div>
+
+  <app-custom-input [control]="form.controls.description" type="text-area" label="Descripción"></app-custom-input>
+  <div class="validators" *ngIf="form.controls.description.errors && form.controls.description.dirty">
+    <div *ngIf="form.controls.description.errors?.['required']">Este campo es requerido</div>
+    <div *ngIf="form.controls.description.errors?.['minlength']">Este campo requiere al menos 4 caracteres</div>
+  </div>
+
+  <app-custom-input [control]="form.controls.sku" type="text" label="SKU"></app-custom-input>
+  <div class="validators" *ngIf="form.controls.sku.errors && form.controls.sku.dirty">
+    <div *ngIf="form.controls.sku.errors?.['required']">Este campo es requerido</div>
+    <div *ngIf="form.controls.sku.errors?.['minlength']">Este campo requiere al menos 4 caracteres</div>
+  </div>
+
+  <app-custom-input [control]="form.controls.price" type="text" label="Price"></app-custom-input>
+  <div class="validators" *ngIf="form.controls.price.errors && form.controls.price.dirty">
+    <div *ngIf="form.controls.price.errors?.['required']">Este campo es requerido</div>
+    <div *ngIf="form.controls.price.errors?.['minlength']">Este campo requiere al menos 4 caracteres</div>
+  </div>
+  <app-custom-input [control]="form.controls.discount" type="text" label="Discount"></app-custom-input>
+  <div class="validators" *ngIf="form.controls.discount.errors && form.controls.discount.dirty">
+    <div *ngIf="form.controls.discount.errors?.['required']">Este campo es requerido</div>
+    <div *ngIf="form.controls.discount.errors?.['minlength']">Este campo requiere al menos 4 caracteres</div>
+  </div>
+  <app-custom-input [control]="form.controls.stock" type="text" label="Stock"></app-custom-input>
+  <div class="validators" *ngIf="form.controls.stock.errors && form.controls.stock.dirty">
+    <div *ngIf="form.controls.stock.errors?.['required']">Este campo es requerido</div>
+    <div *ngIf="form.controls.stock.errors?.['minlength']">Este campo requiere al menos 4 caracteres</div>
+  </div>
+
+  <ion-item class="item-header" lines="none">
+    <ion-label>Imagenes</ion-label>
+    <ion-button (click)="createImage()" slot="end" mode="ios">
+      <ion-icon name="add-circle-outline"></ion-icon>
+    </ion-button>
+  </ion-item>
+
+  <!-- <ion-range [value]="getPercentage()"></ion-range> -->
+
+  <ion-reorder-group id="images" [disabled]="false" (ionItemReorder)="handleReorderImages($any($event))">
+    <div *ngFor="let image of form.value.image;index as i">
+      <ion-item lines="none">
+        <img src="{{image}}" alt="" style="width:30%">
+        <ion-buttons slot="end">
+          <ion-button (click)="removeImage(i)">
+            <ion-icon color="danger" name="trash-outline"></ion-icon>        
+          </ion-button>
+        </ion-buttons>
+        
+      </ion-item>
+
+      <ion-item class="item-reorder"> 
+        <ion-reorder slot="end"></ion-reorder>
+      </ion-item>
+    </div>
+    
+  </ion-reorder-group>
+
+  <ion-item class="item-header" lines="none">
+    <ion-label>Tags</ion-label>
+
+    <img src="{{form.value.tags}}" alt="" >
+    <ion-button (click)="createTag()" slot="end" mode="ios">
+      <ion-icon name="add-circle-outline"></ion-icon>
+    </ion-button>
+  </ion-item>
+  <ion-reorder-group id="tags" [disabled]="false" (ionItemReorder)="handleReorderTags($any($event))">
+    <div *ngFor="let tag of form.value.tags;index as i">
+      <ion-item lines="none">
+        <ion-label class="ion-text-wrap"> {{tag}} </ion-label>
+        <ion-buttons slot="end">
+          <ion-button (click)="removeTag(i)">
+            <ion-icon color="danger" name="trash-outline"></ion-icon>        
+          </ion-button>
+        </ion-buttons>
+        
+      </ion-item>
+
+      <ion-item class="item-reorder"> 
+        <ion-reorder slot="end"></ion-reorder>
+      </ion-item>
+    </div>
+    
+  </ion-reorder-group>
+
+</ion-content>
+<ion-footer>
+ <div class="ion-text-center">
+  <ion-button class="ion-margin" mode="ios" [disabled]="form.invalid" (click)="submit()" shape="round">
+    {{product ? "Guardar Cambios" : "Crear Producto"}}
+  </ion-button>
+ </div>
+</ion-footer>

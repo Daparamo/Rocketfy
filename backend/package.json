@@ -1,0 +1,27 @@
+{
+    "name": "backend-salud-mental",
+    "version": "1.0.0",
+    "description": "backend",
+    "main": "app.js",
+    "scripts": {
+        "dev": "nodemon app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Daniel Páramo",
+    "license": "ISC",
+    "dependencies": {
+        "aws-sdk": "^2.1238.0",
+        "body-parser": "^1.20.1",
+        "cors": "^2.8.5",
+        "docxtemplater": "^3.33.0",
+        "express-promise-router": "^4.1.1",
+        "http": "^0.0.1-security",
+        "mongodb": "^4.11.0",
+        "mongoose": "^6.7.0",
+        "mongoose-paginate-v2": "^1.7.4",
+        "morgan": "^1.10.0",
+        "nodemon": "^2.0.20",
+        "rxjs": "^7.8.1",
+        "supervisor": "^0.12.0"
+    }
+}

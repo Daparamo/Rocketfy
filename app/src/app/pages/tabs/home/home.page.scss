@@ -1,0 +1,48 @@
+ion-card {
+    border-radius: 15px;
+    padding: 10px;
+    min-height: 200px;
+    border: 1px solid rgba(255, 255, 255, 0.168);
+}
+
+ion-card:hover {
+    cursor: pointer;
+    background: var(--ion-color-light);
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 10px;
+    line-height: 20px;
+}
+
+.task-btn {
+    width: 140px;
+}
+
+.empty {
+    padding-top: 15vh;
+}
+
+
+.content-full {
+    width: 100%;
+    background: var(--ion-color-light);
+    color: var(--ion-color-light-contrast);
+    border-radius: 20px 20px 0 0;
+    margin-top: 5vh;
+    padding: 15px 0;
+
+    box-shadow: 0px -8px 40px -16px rgba(0, 0, 0, 0.35);
+    -webkit-box-shadow: 0px -8px 40px -16px rgba(0, 0, 0, 0.35);
+    -moz-box-shadow: 0px -8px 40px -16px rgba(0, 0, 0, 0.35);
+}
+
+.imgProduct {
+
+    width: 100%;
+    height: auto;
+    aspect-ratio: attr(width) / attr(height);
+
+}

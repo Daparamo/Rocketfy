@@ -1,0 +1,7 @@
+{
+  "name": "Rocketfy",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
