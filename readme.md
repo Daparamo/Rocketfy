@@ -18,23 +18,20 @@ Este proyecto es una aplicación web que permite administrar un catálogo de pro
 
 ## Tecnologías Utilizadas
 
-- **Frontend:** La interfaz de usuario está construida utilizando [Tecnología Frontend] (por ejemplo, React, Angular, Vue.js).
+- **Frontend:** La interfaz de usuario está construida utilizando Angular 16 y IONIC 7
 
-- **Backend:** El backend de la aplicación está construido utilizando [Tecnología Backend] (por ejemplo, Node.js, Python, Ruby on Rails).
+- **Backend:** El backend de la aplicación está construido utilizando Node.js
 
-- **Base de Datos:** Los datos de los productos y los usuarios se almacenan en [Tecnología de Base de Datos] (por ejemplo, MongoDB, MySQL, PostgreSQL).
+- **Base de Datos:** Los datos de los productos y los usuarios se almacenan en MongoDB
 
 ## Configuración y Uso
 
 1. Clona este repositorio en tu máquina local.
 
-2. Configura la base de datos y las credenciales de conexión en el archivo de configuración correspondiente.
+2. Instala las dependencias del proyecto utilizando el gestor de paquetes adecuado NPM 
 
-3. Instala las dependencias del proyecto utilizando el gestor de paquetes adecuado.
+3. Ejecuta la aplicación siguiendo las instrucciones específicas para el frontend y el backend.
 
-4. Ejecuta la aplicación siguiendo las instrucciones específicas para el frontend y el backend.
-
-5. Accede a la aplicación en tu navegador y comienza a utilizarla.
 
 ## Capturas de Pantalla
 
