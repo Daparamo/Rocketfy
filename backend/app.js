@@ -1,7 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-//var cors = require('cors');
+const cors = require('cors');
 
 const mongoose = require('mongoose');
 
@@ -21,7 +21,7 @@ app.set('port', process.env.port || 3000);
 // Middlewares
 app.use(morgan('dev'));
 app.use(bodyParser.json());
-//app.use(cors());
+app.use(cors());
 
 // Routes
 app.use('/products', productsRoutes);
