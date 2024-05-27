@@ -11,7 +11,7 @@ const productsRoutes = require('./routes/products');
 
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://127.0.0.1/Rocketfy')
+mongoose.connect('mongodb+srv://tempdpt:Knx075Xn219tSCrj@rocketfy.bx653vz.mongodb.net/?retryWrites=true&w=majority&appName=rocketfy')
     .then(db => console.log('db is connected'))
     .catch(err => console.log(err));
 // */
